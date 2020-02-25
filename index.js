@@ -144,7 +144,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  return "This is a " + inventory[index].car_make + " " + inventory[index].car_model;
+  return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`;
 }
 
 /**
@@ -159,7 +159,7 @@ function getCarInfoByIndex(inventory, index) {
  * it will return `This is a Lincoln Town Car`.
 */
 function getLastCarInfo(carArray) {
-  return "This is a " + carArray[carArray.length - 1].car_make + " " + carArray[carArray.length - 1].car_model;
+  return `This is a ${carArray[carArray.length - 1].car_make} ${carArray[carArray.length - 1].car_model}`;
 }
 
 /**
@@ -175,7 +175,7 @@ function getLastCarInfo(carArray) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoById(carArray, carId) {
-  return "This is a " + carArray[carId - 1].car_make + " " + carArray[carId - 1].car_model;
+  return `This is a ${carArray[carId - 1].car_make} ${carArray[carId - 1].car_model}`;
 }
 
 /**
@@ -202,9 +202,7 @@ function sortCarInventory(carArray) {
 function getModelYears(carArray) {
   var justYears = [];
   for (let i = 0; i < carArray.length; i++) {
-    var arrayIndex = carArray[i];
-    var year = arrayIndex.car_year;
-    justYears.push(year);
+    justYears.push(carArray[i].car_year);
   }
   return justYears;
 }
@@ -224,9 +222,8 @@ function getModelYears(carArray) {
 function getOlderCars(carArray, maxYear) {
   var olderCars = [];
   for (let i = 0; i < carArray.length; i++) {
-    var arrayIndex = carArray[i];
-    if (arrayIndex.car_year <= maxYear) {
-      olderCars.push(arrayIndex);
+    if (carArray[i].car_year <= maxYear) {
+      olderCars.push(carArray[i]);
     }
   }
   return olderCars;
@@ -246,9 +243,8 @@ function getOlderCars(carArray, maxYear) {
 function getGermanCars(carArray) {
   var germanCars = [];
   for (let i = 0; i < carArray.length; i++) {
-    var arrayIndex = carArray[i];
-    if (arrayIndex.car_make === "Audi" || arrayIndex.car_make === "Mercedes-Benz" || arrayIndex.car_make === "Volkswagen" || arrayIndex.car_make === "BMW") {
-      germanCars.push(arrayIndex);
+    if (carArray[i].car_make === "Audi" || carArray[i].car_make === "Mercedes-Benz" || carArray[i].car_make === "Volkswagen" || carArray[i].car_make === "BMW") {
+      germanCars.push(carArray[i]);
     }
   }
   return germanCars
