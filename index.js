@@ -78,9 +78,8 @@ function makeSmartPerson(userName) {
   var smartPerson = {
     name: userName,
     sum: function (a, b) { return a + b; },
-    speak: function (name) {
-      userName: name;
-      return "Hello, my name is " + userName;
+    speak: function (name) {      
+      return "Hello, my name is " + smartPerson.name;
     }
   };
   return smartPerson;
@@ -145,8 +144,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  const carInfo = inventory[index];
-  return "This is a " + carInfo.car_make + " " + carInfo.car_model;
+  return "This is a " + inventory[index].car_make + " " + inventory[index].car_model;
 }
 
 /**
@@ -161,8 +159,7 @@ function getCarInfoByIndex(inventory, index) {
  * it will return `This is a Lincoln Town Car`.
 */
 function getLastCarInfo(carArray) {
-  const lastCar = carArray[carArray.length - 1];
-  return "This is a " + lastCar.car_make + " " + lastCar.car_model;
+  return "This is a " + carArray[carArray.length - 1].car_make + " " + carArray[carArray.length - 1].car_model;
 }
 
 /**
@@ -178,8 +175,7 @@ function getLastCarInfo(carArray) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoById(carArray, carId) {
-  const desiredCar = carArray[carId - 1];
-  return "This is a " + desiredCar.car_make + " " + desiredCar.car_model;
+  return "This is a " + carArray[carId - 1].car_make + " " + carArray[carId - 1].car_model;
 }
 
 /**
