@@ -201,7 +201,7 @@ function sortCarInventory(carArray) {
 */
 function getModelYears(carArray) {
   var justYears = [];
-  for (let i = 0; i < carArray.length; i++) {
+  for (let i in carArray) {
     justYears.push(carArray[i].car_year);
   }
   return justYears;
@@ -221,7 +221,7 @@ function getModelYears(carArray) {
 */
 function getOlderCars(carArray, maxYear) {
   var olderCars = [];
-  for (let i = 0; i < carArray.length; i++) {
+  for (let i in carArray) {
     if (carArray[i].car_year <= maxYear) {
       olderCars.push(carArray[i]);
     }
@@ -242,7 +242,7 @@ function getOlderCars(carArray, maxYear) {
 */
 function getGermanCars(carArray) {
   var germanCars = [];
-  for (let i = 0; i < carArray.length; i++) {
+  for (let i in carArray) {
     if (carArray[i].car_make === "Audi" || carArray[i].car_make === "Mercedes-Benz" || carArray[i].car_make === "Volkswagen" || carArray[i].car_make === "BMW") {
       germanCars.push(carArray[i]);
     }
