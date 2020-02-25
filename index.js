@@ -58,7 +58,7 @@ function makePersonObject(userId, userName, userEmail) {
  * the returned value should look like `Hello, my name is Leia`.
 */
 function getName(person) {
-  return "Hello, my name is " + person.name;
+  return `Hello, my name is ${person.name}`;
 }
 
 /**
@@ -76,9 +76,7 @@ function getName(person) {
 */
 function makeSmartPerson(userName) {
   var smartPerson = {
-    name: userName,
-    sum: function (a, b) { return a + b; },
-    speak: function (name) {      
+    name: userName, sum: function (a, b) { return a + b; }, speak: function (name) {      
       return "Hello, my name is " + smartPerson.name;
     }
   };
@@ -289,7 +287,7 @@ function carMaker(odomNumber) {
   var car = {
     odometer: odomNumber,
     drive: function (distance) {
-      return car.odometer += distance;
+      return this.odometer += distance;
     }
   };
   return car;
